@@ -10,8 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class ServiceFactory {
 
-    public static final String BASE_URL_CODEKAMP_API = "http://demo9121778.mockable.io/";
-    public static final String BASE_URL_FACEBOOK = "http://api.facebook.com/";
+    public static final String BASE_URL_CODEKAMP_API = "http://api.codekamp.in/";
 
     public static <T> T create(final Class<T> service, String baseURL) {
 
