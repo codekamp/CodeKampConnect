@@ -55,12 +55,16 @@ public class CodeKampService {
         return BEARER + " " + this.accessToken;
     }
 
-    public void listContacts(final Callback<ListResponse<Contact>> callback) {
-        service.listContacts(getAccessTokenHeader()).enqueue(new CallbackHandler<ListResponse<Contact>>(retrofit, callback));
+    public void listContacts(int page, Callback<ListResponse<Contact>> callback) {
+        service.listContacts(getAccessTokenHeader(), page).enqueue(new CallbackHandler<ListResponse<Contact>>(retrofit, callback));
     }
 
     public void getContact(int contactId, Callback<ItemResponse<Contact>> callback) {
         service.getContact(getAccessTokenHeader(), contactId).enqueue(new CallbackHandler<ItemResponse<Contact>>(retrofit, callback));
+    }
+
+    public void createContact(String firstName, Callback<ItemResponse<Contact>> callback) {
+        service.createContact(getAccessTokenHeader(), firstName).enqueue(new CallbackHandler<ItemResponse<Contact>>(retrofit, callback));
     }
 
 
